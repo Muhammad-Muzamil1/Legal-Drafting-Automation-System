@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tenancy Agreement</title>
+
+    <style>
+        @page{
+            margin-top:120px;
+            margin-bottom:120px;
+            margin-left:100px;
+            margin-right:100px;
+        }
+
+        body{
+            font-family:'Times New Roman', serif;
+            line-height:1.7;
+            font-size:16px;
+        }
+
+        h1{
+            text-align:center;
+            text-decoration:underline;
+        }
+
+        .section{
+            margin-top:25px;
+        }
+
+        .center{
+            text-align:center;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:40px;
+        }
+
+        td{
+            vertical-align:top;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>TENANCY AGREEMENT</h1>
+
+<p>
+    THIS AGREEMENT OF TENANCY is made at <strong>{{agreementCity}}</strong>
+    on dated <strong>{{agreementDate}}</strong>.
+</p>
+
+<div class="section">
+    <h3>BETWEEN</h3>
+
+    <p>
+        <strong>{{landlordName}}</strong> S/o <strong>{{landlordFatherName}}</strong>,
+        Muslim, Adult, Resident of <strong>{{landlordAddress}}</strong>,
+        CNIC No. <strong>{{landlordCnic}}</strong>,
+        hereinafter referred to as the <b>LANDLORD</b>.
+    </p>
+</div>
+
+<div class="section">
+    <h3>AND</h3>
+
+    <p>
+        <strong>{{tenantName}}</strong> S/o <strong>{{tenantFatherName}}</strong>,
+        Muslim, Adult, Resident of <strong>{{tenantAddress}}</strong>,
+        CNIC No. <strong>{{tenantCnic}}</strong>,
+        hereinafter referred to as the <b>TENANT</b>.
+    </p>
+</div>
+
+<div class="section">
+    <p>
+        WHEREAS the landlord is the sole and absolute owner of
+        House No <strong>{{houseNumber}}</strong>, measuring
+        <strong>{{houseArea}}</strong> Sq. Yards situated at
+        <strong>{{propertyAddress}}</strong>
+        (hereinafter referred to as the <b>DEMISED PREMISES</b>).
+    </p>
+</div>
+
+<div class="section center">
+    <h3>TERMS AND CONDITIONS</h3>
+</div>
+
+<p>
+    1. That the monthly rent of the demised premises has been fixed at
+    Rs. <strong>{{monthlyRent}}</strong>
+    (Rupees <strong>{{monthlyRentWords}}</strong> only),
+    payable up to <strong>{{rentDueDay}}</strong> day of every month.
+</p>
+
+<p>
+    2. That the tenant has deposited a sum of
+    Rs. <strong>{{securityDeposit}}</strong>
+    (Rupees <strong>{{securityDepositWords}}</strong> only)
+    as security deposit refundable upon vacation.
+</p>
+
+<p>
+    3. That the tenancy shall remain effective for
+    <strong>{{tenancyDuration}}</strong> commencing from
+    <strong>{{tenancyStartDate}}</strong> to
+    <strong>{{tenancyEndDate}}</strong>.
+</p>
+
+<p>
+    4. In case of non-payment of rent for two consecutive months,
+    the landlord shall have the right to evict the tenant.
+</p>
+
+<p>
+    5. The tenant shall not alter the structure of the premises.
+</p>
+
+<p>
+    6. The tenant shall be responsible for all utility bills.
+</p>
+
+<p>
+    7. The tenant shall not sublet without written consent.
+</p>
+
+<p>
+    8. The tenant shall maintain the premises in good condition.
+</p>
+
+<p>
+    9. Rent may be increased by <strong>{{rentIncreasePercent}}</strong>% annually if mutually agreed.
+</p>
+
+<p>
+    10. The landlord may inspect the premises with prior notice.
+</p>
+
+<p>
+    11. Major repairs shall be borne by the landlord and minor repairs by the tenant.
+</p>
+
+<p>
+    12. A notice period of <strong>{{vacationNoticePeriod}}</strong> shall be required before vacating.
+</p>
+
+<p>
+    13. Upon expiry, the tenant shall hand over peaceful possession of the premises.
+</p>
+
+<div class="section">
+    <p>
+        IN WITNESS WHEREOF both parties have signed this agreement at
+        <strong>{{agreementCity}}</strong> on the date mentioned above.
+    </p>
+</div>
+
+<br/>
+
+<table>
+
+    <tr>
+        <td>
+            <b>Witness 1</b><br/>
+            Signature: __________________<br/>
+            Name: {{witness1Name}}<br/>
+            S/o: {{witness1Father}}<br/>
+            CNIC: {{witness1Cnic}}
+        </td>
+
+        <td align="right">
+            <b>LANDLORD</b><br/>
+            Signature: __________________<br/>
+            Name: {{landlordName}}<br/>
+            S/o: {{landlordFatherName}}<br/>
+            CNIC: {{landlordCnic}}
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <b>Witness 2</b><br/>
+            Signature: __________________<br/>
+            Name: {{witness2Name}}<br/>
+            S/o: {{witness2Father}}<br/>
+            CNIC: {{witness2Cnic}}
+        </td>
+
+        <td align="right">
+            <b>TENANT</b><br/>
+            Signature: __________________<br/>
+            Name: {{tenantName}}<br/>
+            S/o: {{tenantFatherName}}<br/>
+            CNIC: {{tenantCnic}}
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Vehicle Sale Agreement</title>
+
+    <style>
+        @page{
+            margin-top:120px;
+            margin-bottom:120px;
+            margin-left:100px;
+            margin-right:100px;
+        }
+
+        body{
+            font-family:'Times New Roman', serif;
+            font-size:16px;
+            line-height:1.7;
+        }
+
+        h1{
+            text-align:center;
+            text-decoration:underline;
+        }
+
+        .section{
+            margin-top:25px;
+        }
+
+        .center{
+            text-align:center;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        .signature-table td{
+            width:50%;
+            vertical-align:top;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>SALE AGREEMENT OF VEHICLE</h1>
+
+<p>
+    This Agreement is made at <strong>{{agreementCity}}</strong>
+    on this <strong>{{agreementDay}}</strong> day of
+    <strong>{{agreementMonth}}</strong>.
+</p>
+
+<div class="section">
+    <h3>BETWEEN</h3>
+
+    <p>
+        M/S <strong>{{companyName}}</strong>, NTN No. <strong>{{companyNTN}}</strong>,
+        having address <strong>{{companyAddress}}</strong>,
+        hereinafter referred to as the <b>FIRST PARTY</b>.
+    </p>
+</div>
+
+<div class="section">
+    <h3>AND</h3>
+
+    <p>
+        Mr. <strong>{{buyerName}}</strong> S/o <strong>{{buyerFatherName}}</strong>,
+        Muslim, Adult, CNIC No. <strong>{{buyerCnic}}</strong>,
+        Resident of <strong>{{buyerAddress}}</strong>,
+        Employee of <strong>{{buyerCompany}}</strong>,
+        Staff No. <strong>{{buyerStaffNumber}}</strong>,
+        hereinafter referred to as the <b>SECOND PARTY</b>.
+    </p>
+</div>
+
+<div class="section">
+    <h3>WITNESSETH AS UNDER</h3>
+
+    <p>
+        WHEREAS the FIRST PARTY is the sole and absolute owner of the vehicle
+        bearing the following particulars:
+    </p>
+
+    <table>
+
+        <tr>
+            <td>Registration No:</td>
+            <td><strong>{{vehicleRegistrationNumber}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Engine No:</td>
+            <td><strong>{{engineNumber}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Chassis No:</td>
+            <td><strong>{{chassisNumber}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Maker:</td>
+            <td><strong>{{vehicleMaker}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Model:</td>
+            <td><strong>{{vehicleModel}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Color:</td>
+            <td><strong>{{vehicleColor}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Horse Power:</td>
+            <td><strong>{{vehicleHorsePower}}</strong></td>
+        </tr>
+
+    </table>
+
+    <p>
+        Hereinafter referred to as the <b>SAID VEHICLE</b>.
+    </p>
+</div>
+
+<div class="section">
+    <p>
+        WHEREAS the FIRST PARTY has agreed to sell the said vehicle to the SECOND PARTY
+        for a total consideration of Rs. <strong>{{salePrice}}</strong>
+        (Rupees <strong>{{salePriceWords}}</strong> only),
+        on the following terms and conditions:
+    </p>
+</div>
+
+<div class="section center">
+    <h3>TERMS AND CONDITIONS</h3>
+</div>
+
+<p>
+    1. The SECOND PARTY has paid the full consideration amount of
+    Rs. <strong>{{salePrice}}</strong>
+    (Rupees <strong>{{salePriceWords}}</strong> only)
+    through <strong>{{paymentMethod}}</strong>,
+    Pay Order / Reference No. <strong>{{paymentReference}}</strong>.
+</p>
+
+<p>
+    2. The FIRST PARTY has handed over peaceful possession of the vehicle
+    along with all original documents to the SECOND PARTY.
+</p>
+
+<p>
+    3. The SECOND PARTY shall be the sole and absolute owner of the said vehicle.
+</p>
+
+<p>
+    4. All liabilities before <strong>{{responsibilityBeforeDate}}</strong> at
+    <strong>{{responsibilityBeforeTime}}</strong> shall be borne by the FIRST PARTY,
+    and thereafter by the SECOND PARTY.
+</p>
+
+<p>
+    5. The vehicle shall be transferred in the name of
+    <strong>{{transferCompanyName}}</strong> (NTN: {{transferCompanyNTN}})
+    within 14 working days.
+</p>
+
+<p>
+    6. Any previous dues, taxes or liabilities prior to this agreement
+    shall be the responsibility of the FIRST PARTY.
+    After this agreement, the SECOND PARTY shall be responsible.
+</p>
+
+<p>
+    7. NOC of <strong>{{companyName}}</strong> is attached with this agreement.
+</p>
+
+<div class="section">
+    <p>
+        IN WITNESS WHEREOF both parties have signed this agreement at
+        <strong>{{agreementCity}}</strong> on the date mentioned above.
+    </p>
+</div>
+
+<br/>
+
+<p><strong>{{agreementCity}}</strong></p>
+<p>Dated: <strong>{{agreementDate}}</strong></p>
+
+<br/><br/>
+
+<table class="signature-table">
+
+    <tr>
+        <td>
+            <b>FIRST PARTY</b><br/><br/>
+            Signature: ______________________<br/><br/>
+            Name: {{companyName}}<br/>
+            NTN No: {{companyNTN}}<br/>
+            Address: {{companyAddress}}
+        </td>
+
+        <td>
+            <b>SECOND PARTY</b><br/><br/>
+            Signature: ______________________<br/><br/>
+            Name: {{buyerName}}<br/>
+            S/o: {{buyerFatherName}}<br/>
+            CNIC No: {{buyerCnic}}<br/>
+            Address: {{buyerAddress}}<br/>
+            Employee of: {{buyerCompany}}<br/>
+            Staff No: {{buyerStaffNumber}}
+        </td>
+    </tr>
+
+</table>
+
+<br/><br/>
+
+<table class="signature-table">
+
+    <tr>
+        <td>
+            <b>Witness 1</b><br/><br/>
+            Signature: ______________________<br/>
+            Name: {{witness1Name}}<br/>
+            S/o: {{witness1Father}}<br/>
+            CNIC No: {{witness1Cnic}}<br/>
+            Address: {{witness1Address}}
+        </td>
+
+        <td>
+            <b>Witness 2</b><br/><br/>
+            Signature: ______________________<br/>
+            Name: {{witness2Name}}<br/>
+            S/o: {{witness2Father}}<br/>
+            CNIC No: {{witness2Cnic}}<br/>
+            Address: {{witness2Address}}
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

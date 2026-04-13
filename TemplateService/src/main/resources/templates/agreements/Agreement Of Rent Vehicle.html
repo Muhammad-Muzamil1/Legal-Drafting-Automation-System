@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agreement of Rent Vehicle</title>
+
+    <style>
+
+        @page{
+            margin-top:120px;
+            margin-bottom:120px;
+            margin-left:100px;
+            margin-right:100px;
+        }
+
+        body{
+            font-family:"Times New Roman", serif;
+            font-size:16px;
+            line-height:1.7;
+        }
+
+        h1{
+            text-align:center;
+            text-decoration:underline;
+        }
+
+        .section{
+            margin-top:25px;
+        }
+
+        .vehicle-table{
+            margin-top:20px;
+        }
+
+        .vehicle-table td{
+            padding:4px 0;
+        }
+
+        .signature-table{
+            width:100%;
+            margin-top:40px;
+        }
+
+        .signature-table td{
+            width:50%;
+            vertical-align:top;
+        }
+
+        .center{
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>AGREEMENT OF RENT VEHICLE</h1>
+
+<p>
+    This agreement of rent vehicle has been made at
+    <strong>{{agreementCity}}</strong>
+    on this <strong>{{agreementDay}}</strong> day of
+    <strong>{{agreementMonth}}</strong>.
+</p>
+
+<div class="section">
+
+    <h3>BETWEEN</h3>
+
+    <p>
+        Mr. <strong>{{ownerName}}</strong>
+        S/o <strong>{{ownerFatherName}}</strong>,
+        Muslim, Adult, holding CNIC No.
+        <strong>{{ownerCnic}}</strong>,
+
+        Resident of <strong>{{ownerAddress}}</strong>,
+
+        hereinafter called the <b>OWNER / FIRST PARTY</b>.
+    </p>
+
+</div>
+
+<div class="section">
+
+    <h3>AND</h3>
+
+    <p>
+        Mr. <strong>{{tenantName}}</strong>
+        S/o <strong>{{tenantFatherName}}</strong>,
+        Muslim, Adult, holding CNIC No.
+        <strong>{{tenantCnic}}</strong>,
+
+        Resident of <strong>{{tenantAddress}}</strong>,
+
+        hereinafter referred to as the <b>TENANT / SECOND PARTY</b>.
+    </p>
+
+</div>
+
+<div class="section">
+
+    <p>
+        Whereas the OWNER / FIRST PARTY is the lawful owner
+        of the following vehicle:
+    </p>
+
+    <table class="vehicle-table">
+
+        <tr>
+            <td>Registration No:</td>
+            <td><strong>{{vehicleRegistrationNumber}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Make:</td>
+            <td><strong>{{vehicleMake}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Model:</td>
+            <td><strong>{{vehicleModel}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Color:</td>
+            <td><strong>{{vehicleColor}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Chassis No:</td>
+            <td><strong>{{chassisNumber}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Engine No:</td>
+            <td><strong>{{engineNumber}}</strong></td>
+        </tr>
+
+        <tr>
+            <td>Horse Power:</td>
+            <td><strong>{{vehicleHorsePower}}</strong></td>
+        </tr>
+
+    </table>
+
+    <p>
+        Hereinafter referred to as the <b>said vehicle</b>.
+    </p>
+
+</div>
+
+<div class="section">
+
+    <h3 class="center">TERMS & CONDITIONS</h3>
+
+    <p>
+        1. The First Party agrees to rent out the said vehicle to the
+        Second Party on weekly rent of
+        Rs. <strong>{{weeklyRentAmount}}</strong>
+        (Rupees <strong>{{weeklyRentWords}}</strong> only),
+        payable every <strong>{{rentPaymentDay}}</strong>.
+    </p>
+
+    <p>
+        2. This agreement shall remain valid for a period of
+        <strong>{{agreementDuration}}</strong>
+        and may be extended by mutual consent of both parties.
+    </p>
+
+    <p>
+        3. The Owner shall bear the maintenance expenses of the vehicle.
+        In case of accident or damages, the Tenant shall be responsible
+        for all repair costs.
+        If the vehicle is stolen, the Second Party shall be fully responsible.
+    </p>
+
+    <p>
+        4. If either party wishes to terminate this agreement,
+        one month prior notice shall be served to the other party.
+    </p>
+
+    <p>
+        5. The Second Party shall return the vehicle in the same condition
+        as received. Any minor damages shall be the responsibility
+        of the Second Party.
+    </p>
+
+    <p>
+        6. The Owner shall be responsible for all legal matters
+        related to the vehicle before the date of this agreement,
+        including police cases, excise matters, ACLC matters,
+        or court cases.
+        After the vehicle handover date, the Tenant shall be responsible
+        for such matters.
+    </p>
+
+</div>
+
+<div class="section">
+
+    <p>
+        IN WITNESS WHEREOF both parties have signed this agreement
+        on the day, month and year first above mentioned.
+    </p>
+
+</div>
+
+<br>
+
+<table class="signature-table">
+
+    <tr>
+
+        <td>
+
+            <b>OWNER / FIRST PARTY</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br><br>
+
+            Name: {{ownerName}}
+
+            <br>
+
+            S/o: {{ownerFatherName}}
+
+            <br>
+
+            CNIC No: {{ownerCnic}}
+
+        </td>
+
+        <td>
+
+            <b>TENANT / SECOND PARTY</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br><br>
+
+            Name: {{tenantName}}
+
+            <br>
+
+            S/o: {{tenantFatherName}}
+
+            <br>
+
+            CNIC No: {{tenantCnic}}
+
+        </td>
+
+    </tr>
+
+</table>
+
+<br><br>
+
+<table class="signature-table">
+
+    <tr>
+
+        <td>
+
+            <b>Witness 1</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br>
+
+            Name: {{witness1Name}}
+
+            <br>
+
+            S/o: {{witness1Father}}
+
+            <br>
+
+            CNIC No: {{witness1Cnic}}
+
+        </td>
+
+        <td>
+
+            <b>Witness 2</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br>
+
+            Name: {{witness2Name}}
+
+            <br>
+
+            S/o: {{witness2Father}}
+
+            <br>
+
+            CNIC No: {{witness2Cnic}}
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>

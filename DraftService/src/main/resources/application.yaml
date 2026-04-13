@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: DraftService
+server:
+  port: 8081

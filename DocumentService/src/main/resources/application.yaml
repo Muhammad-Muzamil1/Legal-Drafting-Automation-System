@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: DocumentService
+
+server:
+  port: 8082

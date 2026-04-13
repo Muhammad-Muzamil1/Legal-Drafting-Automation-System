@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Transfer Deed</title>
+
+    <style>
+
+        @page{
+            margin-top:120px;
+            margin-bottom:120px;
+            margin-left:100px;
+            margin-right:100px;
+        }
+
+        body{
+            font-family:"Times New Roman", serif;
+            font-size:16px;
+            line-height:1.7;
+        }
+
+        h1{
+            text-align:center;
+            text-decoration:underline;
+        }
+
+        .section{
+            margin-top:25px;
+        }
+
+        .signature-table{
+            width:100%;
+            margin-top:40px;
+        }
+
+        .signature-table td{
+            width:50%;
+            vertical-align:top;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>VEHICLE TRANSFER DEED</h1>
+
+<div class="section">
+
+    <p>
+        The Excise and Taxation Officer<br>
+        Motor Registration Wing<br>
+        Civic Center<br>
+        <strong>{{exciseOfficeCity}}</strong>
+    </p>
+
+</div>
+
+<div class="section">
+
+    <p>Dear Sir,</p>
+
+    <p>
+        I/We have sold my/our vehicle/motorcycle having:
+    </p>
+
+    <p>
+        Registration No: <strong>{{vehicleRegistrationNumber}}</strong><br>
+        Make: <strong>{{vehicleMake}}</strong><br>
+        Model: <strong>{{vehicleModel}}</strong><br>
+        Chassis No: <strong>{{chassisNumber}}</strong><br>
+        Engine No: <strong>{{engineNumber}}</strong><br>
+        Horse Power: <strong>{{vehicleHorsePower}}</strong> cc
+    </p>
+
+    <p>
+        to Mr. <strong>{{purchaserName}}</strong>
+        S/o <strong>{{purchaserFatherName}}</strong>,
+
+        bearing CNIC No <strong>{{purchaserCnic}}</strong>,
+
+        resident of <strong>{{purchaserAddress}}</strong>.
+    </p>
+
+    <p>
+        The delivery of the above vehicle has been given on dated
+        <strong>{{vehicleDeliveryDate}}</strong>.
+    </p>
+
+    <p>
+        It is therefore requested that the ownership of the above vehicle
+        may kindly be transferred in the name of the above purchaser
+        at his/her own risk and cost.
+
+        I/We have no objection to the same and shall have no claim
+        over the said vehicle in the future.
+
+        The purchaser shall be fully responsible for all matters
+        related to the vehicle after this transfer.
+    </p>
+
+</div>
+
+<br>
+
+<table class="signature-table">
+
+    <tr>
+
+        <td>
+
+            <b>Seller</b>
+
+            <br><br>
+
+            Signature: ______________________
+
+            <br><br>
+
+            Seller’s Name: {{sellerName}}
+
+            <br>
+
+            Father’s Name: {{sellerFatherName}}
+
+            <br>
+
+            Address: {{sellerAddress}}
+
+            <br>
+
+            CNIC No: {{sellerCnic}}
+
+        </td>
+
+        <td>
+
+            <b>ACCEPTANCE BY THE PURCHASER</b>
+
+            <br><br>
+
+            I/We confirm that I/we have received the delivery
+            of the above mentioned vehicle and shall produce it
+            for ownership transfer within 60 days.
+
+            <br><br>
+
+            Signature: ______________________
+
+            <br>
+
+            Purchaser’s Name: {{purchaserName}}
+
+            <br>
+
+            Father’s Name: {{purchaserFatherName}}
+
+            <br>
+
+            CNIC No: {{purchaserCnic}}
+
+            <br>
+
+            Address: {{purchaserAddress}}
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>

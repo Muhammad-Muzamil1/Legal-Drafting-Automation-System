@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gift Deed</title>
+
+  <style>
+
+    @page{
+      margin-top:120px;
+      margin-bottom:120px;
+      margin-left:100px;
+      margin-right:100px;
+    }
+
+    body{
+      font-family:"Times New Roman", serif;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    h1{
+      text-align:center;
+      text-decoration:underline;
+    }
+
+    .section{
+      margin-top:25px;
+    }
+
+    .center{
+      text-align:center;
+    }
+
+    .signature-table{
+      width:100%;
+      margin-top:50px;
+    }
+
+    .signature-table td{
+      width:50%;
+      vertical-align:top;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<h1>GIFT DEED</h1>
+
+<p>
+  This Gift Deed is made at <strong>{{agreementCity}}</strong> on this
+  <strong>{{agreementDay}}</strong> day of
+  <strong>{{agreementMonth}}</strong>.
+</p>
+
+<div class="section">
+
+  <h3>BETWEEN</h3>
+
+  <p>
+    Mr. <strong>{{donorName}}</strong>
+    S/o <strong>{{donorFatherName}}</strong>, Muslim, Adult,
+
+    Holding CNIC No. <strong>{{donorCnic}}</strong>,
+
+    Resident of <strong>{{donorAddress}}</strong>
+
+    hereinafter called the <b>DONOR</b>
+    (which expression shall whenever the context so permits
+    mean and include his heirs, executors, administrators and assigns)
+    of the FIRST PART.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <h3>AND</h3>
+
+  <p>
+    Mr. <strong>{{doneeName}}</strong>
+    S/o <strong>{{doneeFatherName}}</strong>, Muslim, Adult,
+
+    Holding CNIC No. <strong>{{doneeCnic}}</strong>,
+
+    Resident of <strong>{{doneeAddress}}</strong>
+
+    hereinafter called the <b>DONEE</b>
+    (which expression shall whenever the context so permits
+    mean and include his heirs, successors and assigns)
+    of the OTHER PART.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <p>
+    WHEREAS the DONOR above named is the lawful owner of
+    House No <strong>{{propertyHouseNumber}}</strong>,
+    measuring <strong>{{propertyArea}}</strong> Sq. Yards,
+
+    situated at <strong>{{propertyLocation}}</strong>,
+
+    hereinafter referred to as the <b>“SAID PROPERTY”</b>.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <p>
+    AND WHEREAS the DONOR in consideration of love and affection for the DONEE,
+    who is his/her <strong>{{relationship}}</strong>,
+    has voluntarily and without any duress, coercion, threat or pressure,
+    orally gifted (HIBA) the above mentioned property to the DONEE
+    in accordance with the Mohammadan Law in presence of witnesses
+    on <strong>{{giftDeclarationDate}}</strong> at
+    <strong>{{agreementCity}}</strong>.
+  </p>
+
+  <p>
+    The said oral gift (HIBA) was voluntarily declared by the DONOR
+    and accepted by the DONEE.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <p>
+    AND WHEREAS it is expedient and necessary to record the said gift
+    to avoid any complication, litigation, misunderstanding or dispute
+    among the family members or other interested persons.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <h3 class="center">DECLARATION OF GIFT</h3>
+
+  <p>
+    1. The DONOR has granted, donated and gifted the aforesaid property
+    to the DONEE in consideration of love and affection
+    according to the Mohammadan Law before the witnesses.
+  </p>
+
+  <p>
+    2. At the time of pronouncement of this Gift,
+    the DONOR handed over the physical possession of the said property
+    to the DONEE and all original title documents have also been delivered.
+  </p>
+
+  <p>
+    3. From the date of the Gift,
+    the DONOR has completely divested herself/himself
+    from any ownership or control over the property.
+  </p>
+
+  <p>
+    4. The DONEE shall now be the absolute and exclusive owner
+    of the said property with full rights, title and possession.
+  </p>
+
+  <p>
+    5. The said property is free from any encumbrances,
+    liens, claims or charges up to the date of this Gift Deed.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <p>
+    That henceforth the DONEE shall peacefully hold, possess,
+    occupy and enjoy the said property without any claim,
+    interference or demand by the DONOR or any other person.
+  </p>
+
+</div>
+
+<div class="section">
+
+  <p>
+    IN WITNESS WHEREOF the DONOR has set his/her hands
+    in presence of the witnesses at
+    <strong>{{agreementCity}}</strong>
+    on the date mentioned above.
+  </p>
+
+</div>
+
+<br><br>
+
+<table class="signature-table">
+
+  <tr>
+
+    <td>
+
+      <b>DONOR</b>
+
+      <br><br>
+
+      Signature: ______________________
+
+      <br><br>
+
+      Name: {{donorName}}
+
+      <br>
+
+      S/o: {{donorFatherName}}
+
+      <br>
+
+      CNIC No: {{donorCnic}}
+
+      <br>
+
+      Address: {{donorAddress}}
+
+    </td>
+
+    <td>
+
+      <b>DONEE</b>
+
+      <br><br>
+
+      Signature: ______________________
+
+      <br><br>
+
+      Name: {{doneeName}}
+
+      <br>
+
+      S/o: {{doneeFatherName}}
+
+      <br>
+
+      CNIC No: {{doneeCnic}}
+
+      <br>
+
+      Address: {{doneeAddress}}
+
+    </td>
+
+  </tr>
+
+</table>
+
+<br><br>
+
+<table class="signature-table">
+
+  <tr>
+
+    <td>
+
+      <b>Witness 1</b>
+
+      <br><br>
+
+      Signature: ______________________
+
+      <br>
+
+      Name: {{witness1Name}}
+
+      <br>
+
+      S/o: {{witness1Father}}
+
+      <br>
+
+      CNIC No: {{witness1Cnic}}
+
+    </td>
+
+    <td>
+
+      <b>Witness 2</b>
+
+      <br><br>
+
+      Signature: ______________________
+
+      <br>
+
+      Name: {{witness2Name}}
+
+      <br>
+
+      S/o: {{witness2Father}}
+
+      <br>
+
+      CNIC No: {{witness2Cnic}}
+
+    </td>
+
+  </tr>
+
+</table>
+
+</body>
+</html>

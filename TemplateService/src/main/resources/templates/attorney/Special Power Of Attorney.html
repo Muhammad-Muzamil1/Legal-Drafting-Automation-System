@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Special Power of Attorney for Rent</title>
+
+    <style>
+
+        @page{
+            margin-top:120px;
+            margin-bottom:120px;
+            margin-left:100px;
+            margin-right:100px;
+        }
+
+        body{
+            font-family:"Times New Roman", serif;
+            font-size:16px;
+            line-height:1.7;
+        }
+
+        h1{
+            text-align:center;
+            text-decoration:underline;
+        }
+
+        .section{
+            margin-top:25px;
+        }
+
+        .signature-table{
+            width:100%;
+            margin-top:50px;
+        }
+
+        .signature-table td{
+            width:50%;
+            vertical-align:top;
+        }
+
+        .center{
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>SPECIAL POWER OF ATTORNEY</h1>
+<h2 class="center">FOR RENT</h2>
+
+<div class="section">
+
+    <p>
+        Know all men by these presents that I
+        <strong>{{executantName}}</strong>
+        S/W/D of <strong>{{executantFatherName}}</strong>,
+
+        holding CNIC No. <strong>{{executantCnic}}</strong>,
+
+        Muslim, Adult, Resident of House No.
+        <strong>{{executantHouseNumber}}</strong>,
+
+        being of sound mind and free will,
+        do hereby appoint my <strong>{{relationship}}</strong>
+
+        Mr. <strong>{{attorneyName}}</strong>
+        S/o <strong>{{attorneyFatherName}}</strong>,
+
+        holding CNIC No. <strong>{{attorneyCnic}}</strong>,
+
+        Resident of House No.
+        <strong>{{attorneyHouseNumber}}</strong>
+        <strong>{{attorneyAddress}}</strong>
+
+        to be my true and lawful <b>ATTORNEY</b>
+        in my name and on my behalf in respect of my property / plot
+        bearing No. <strong>{{propertyNumber}}</strong>
+
+        situated at <strong>{{propertyLocation}}</strong>.
+    </p>
+
+</div>
+
+<div class="section">
+
+    <p>
+        He is hereby appointed my lawful attorney to perform the following
+        acts on my behalf:
+    </p>
+
+    <p>
+        To look after and manage the said property,
+        to arrange documentation regarding renting out the property
+        to <strong>{{tenantName}}</strong>,
+        to receive rent payments or cheques,
+        and to deal with all matters relating to the rent
+        of the said property with <strong>{{rentAuthority}}</strong>.
+    </p>
+
+    <p>
+        I hereby ratify and confirm all acts, deeds and matters done
+        by my above named attorney in the exercise of powers granted herein,
+        and such acts shall be considered as if done by me personally.
+    </p>
+
+</div>
+
+<div class="section">
+
+    <p>
+        IN WITNESS WHEREOF I, the executant,
+        have set my hands on this
+        <strong>{{agreementDay}}</strong> day of
+        <strong>{{agreementMonth}}</strong>
+        at <strong>{{agreementCity}}</strong>
+        in the presence of the following witnesses.
+    </p>
+
+</div>
+
+<br><br>
+
+<table class="signature-table">
+
+    <tr>
+
+        <td>
+
+            <b>Witness 1</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br>
+
+            Name: {{witness1Name}}
+
+            <br>
+
+            CNIC No: {{witness1Cnic}}
+
+        </td>
+
+        <td>
+
+            <b>EXECUTANT</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br>
+
+            Name: {{executantName}}
+
+            <br>
+
+            CNIC No: {{executantCnic}}
+
+        </td>
+
+    </tr>
+
+</table>
+
+<br><br>
+
+<table class="signature-table">
+
+    <tr>
+
+        <td>
+
+            <b>Witness 2</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br>
+
+            Name: {{witness2Name}}
+
+            <br>
+
+            CNIC No: {{witness2Cnic}}
+
+        </td>
+
+        <td>
+
+            <b>Specimen Signature of Attorney</b>
+
+            <br><br>
+
+            Signature: ____________________
+
+            <br>
+
+            Name: {{attorneyName}}
+
+            <br>
+
+            CNIC No: {{attorneyCnic}}
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>
