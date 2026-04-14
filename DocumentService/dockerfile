@@ -1,0 +1,11 @@
+# Use lightweight Java image
+FROM openjdk:27-ea-trixie
+
+# Set working directory
+WORKDIR /app
+
+# Copy jar file
+COPY target/*.jar app.jar
+
+# Run the application
+ENTRYPOINT ["java","-jar","app.jar"]
