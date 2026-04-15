@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ApiGateway
+    name: api-gateway-service
 
 management:
   endpoints:

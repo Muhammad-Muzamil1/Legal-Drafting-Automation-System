@@ -1,5 +1,5 @@
 spring:
   application:
-    name: DraftService
+    name: draft-service
 server:
   port: 8081

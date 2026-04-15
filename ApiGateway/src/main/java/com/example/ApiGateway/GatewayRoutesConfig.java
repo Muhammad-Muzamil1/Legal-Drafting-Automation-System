@@ -16,14 +16,14 @@ public class GatewayRoutesConfig {
     @Bean
     public RouterFunction<ServerResponse> templateServiceRoute() {
         return route("TemplateService")
-                .route(path("/api/v1/category/**").or(path("/api/v1/form/**")), http("http://localhost:8080"))
+                .route(path("/api/v1/category/**").or(path("/api/v1/form/**")), http("http://template-service:8080"))
                 .build();
     }
 
     @Bean
     public RouterFunction<ServerResponse> documentServiceRoute() {
         return route("DocumentService")
-                .route(path("/api/v1/generatepdf/**"), http("http://localhost:8082"))
+                .route(path("/api/v1/generatepdf/**"), http("http://document-service:8082"))
                 .build();
     }
 }

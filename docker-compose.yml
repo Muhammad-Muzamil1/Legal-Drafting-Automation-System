@@ -3,24 +3,24 @@ version: "3.8"
 services:
 
   template-service:
-    build: ./template-service
+    build: ./TemplateService
     ports:
       - "8080:8080"
   
   document-service:
-    build:  ./document-service
+    build:  ./DocumentService
     ports:
       - "8082:8082"
 
   draft-service:
-    build: ./draft-service
+    build: ./DraftService
     ports:
       - "8081:8081"
     depends_on:
       - template-service
 
   api-gateway-service:
-    build: ./api-gateway-service
+    build: ./ApiGateway
     ports:
       - "8083:8083"
     depends_on:
@@ -28,6 +28,6 @@ services:
       - template-service
 
   frontend:
-    build: ./frontend
+    build: ./Frontend
     ports:
       - "5173:5173"
