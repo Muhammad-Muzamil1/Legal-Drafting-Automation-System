@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo '📦 Cloning repository from GitHub...'
-                git branch: 'main',
+                git branch: 'master',
                     credentialsId: 'github-token',
                     url: 'https://github.com/Muhammad-Muzamil1/Legal-Drafting-Automation-System.git'
                 
