@@ -8,6 +8,11 @@ pipeline {
         // Windows-specific settings
         DOCKER_COMPOSE_CMD = 'docker-compose'
     }
+    tools{
+
+	maven 'maven'
+	nodejs 'node.js'
+	}
     
     stages {
         stage('Checkout Code') {
