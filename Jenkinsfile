@@ -7,8 +7,6 @@ pipeline {
         
         // Windows-specific settings
         DOCKER_COMPOSE_CMD = 'docker-compose'
-        MAVEN_CMD = 'mvn.cmd'  // Use .cmd on Windows
-        NPM_CMD = 'npm.cmd'     // Use .cmd on Windows
     }
     
     stages {
@@ -32,7 +30,7 @@ pipeline {
                     steps {
                         dir('TemplateService') {
                             echo '🔨 Building Template Service...'
-                            bat 'mvn.cmd clean package -DskipTests'
+                            bat 'mvn clean package -DskipTests'
                             echo '🐳 Building Docker image for Template Service...'
                             bat 'docker build -t template-service:latest .'
                         }
@@ -43,7 +41,7 @@ pipeline {
                     steps {
                         dir('DocumentService') {
                             echo '🔨 Building Document Service...'
-                            bat 'mvn.cmd clean package -DskipTests'
+                            bat 'mvn clean package -DskipTests'
                             bat 'docker build -t document-service:latest .'
                         }
                     }
@@ -53,7 +51,7 @@ pipeline {
                     steps {
                         dir('DraftService') {
                             echo '🔨 Building Draft Service...'
-                            bat 'mvn.cmd clean package -DskipTests'
+                            bat 'mvn clean package -DskipTests'
                             bat 'docker build -t draft-service:latest .'
                         }
                     }
@@ -63,7 +61,7 @@ pipeline {
                     steps {
                         dir('ApiGateway') {
                             echo '🔨 Building API Gateway Service...'
-                            bat 'mvn.cmd clean package -DskipTests'
+                            bat 'mvn clean package -DskipTests'
                             bat 'docker build -t api-gateway-service:latest .'
                         }
                     }
@@ -75,11 +73,11 @@ pipeline {
             steps {
                 dir('frontend') {
                     echo '📦 Installing frontend dependencies...'
-                    bat 'npm.cmd install'
-                    bat 'npm.cmd install lightningcss --force'
+                    bat 'npm install'
+                    bat 'npm install lightningcss --force'
                     
                     echo '🔨 Building frontend for production...'
-                    bat 'npm.cmd run build'
+                    bat 'npm run build'
                     
                     echo '🐳 Building Docker image for frontend...'
                     bat 'docker build -t frontend:latest .'
