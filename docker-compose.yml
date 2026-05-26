@@ -4,16 +4,19 @@ services:
 
   template-service:
     build: ./TemplateService
+    image: muhammadmuzamil1/template-service:v3
     ports:
       - "8080:8080"
   
   document-service:
     build:  ./DocumentService
+    image: muhammadmuzamil1/document-service:v3
     ports:
       - "8082:8082"
 
   draft-service:
     build: ./DraftService
+    image: muhammadmuzamil1/draft-service:v3
     ports:
       - "8081:8081"
     depends_on:
@@ -21,6 +24,7 @@ services:
 
   api-gateway-service:
     build: ./ApiGateway
+    image: muhammadmuzamil1/api-gateway:v3
     ports:
       - "8083:8083"
     depends_on:
@@ -29,5 +33,6 @@ services:
 
   frontend:
     build: ./Frontend
+    image: muhammadmuzamil1/frontend:v7
     ports:
-      - "5173:5173"
+      - "5173:80"
