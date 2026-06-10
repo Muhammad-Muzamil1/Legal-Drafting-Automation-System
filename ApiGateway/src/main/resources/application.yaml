@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  profiles:
+    active: local
   application:
     name: api-gateway-service
 
@@ -9,7 +11,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,gateway
+        include: health,gateway,circuitbreakers,circuitbreakerevents
 
   endpoint:
     health:
@@ -20,3 +22,28 @@ management:
     gateway:
       enabled: true
 
+resilience4j:
+
+  circuitbreaker:
+
+    instances:
+
+      templateService:
+
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+      documentService:
+
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true

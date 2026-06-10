@@ -1,0 +1,7 @@
+services:
+
+  template:
+    url: http://template-service:8080
+
+  document:
+    url: http://document-service:8082

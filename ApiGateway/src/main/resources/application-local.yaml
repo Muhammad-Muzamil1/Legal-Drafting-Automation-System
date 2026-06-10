@@ -1,0 +1,7 @@
+services:
+
+  template:
+    url: http://localhost:8080
+
+  document:
+    url: http://localhost:8082

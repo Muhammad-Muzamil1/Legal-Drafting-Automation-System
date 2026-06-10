@@ -5,7 +5,7 @@ metadata:
   name: frontend
 
 spec:
-  replicas: 2
+  replicas: 1
 
   selector:
     matchLabels:
@@ -26,11 +26,11 @@ spec:
           resources:
             requests:
               cpu: 50m
-              memory: 64mi
+              memory: 64Mi
 
             limits:
               cpu: 100m
-              memory: 256mi
+              memory: 256Mi
 
 ---
 

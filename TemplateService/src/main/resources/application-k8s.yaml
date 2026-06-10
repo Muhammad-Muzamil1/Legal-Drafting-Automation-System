@@ -1,0 +1,3 @@
+draft:
+  service:
+    url: http://draft-service:8081

@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">5000</intProp>
+        <intProp name="ThreadGroup.ramp_time">50</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="API-Gateway-Service">
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8083</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">http://localhost:8083/api/v1/form</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&#xd;
+  {&#xd;
+    &quot;templateName&quot;: &quot;Agreement Of Rent Vehicle&quot;,&#xd;
+    &quot;category&quot;: &quot;agreements&quot;,&#xd;
+    &quot;fields&quot;: {&#xd;
+      &quot;agreementCity&quot;: &quot;Karachi&quot;,&#xd;
+      &quot;agreementDay&quot;: &quot;10&quot;,&#xd;
+      &quot;agreementMonth&quot;: &quot;March&quot;,&#xd;
+&#xd;
+      &quot;ownerName&quot;: &quot;Ahmed Ali&quot;,&#xd;
+      &quot;ownerFatherName&quot;: &quot;Ghulam Mustafa&quot;,&#xd;
+      &quot;ownerCnic&quot;: &quot;42101-5678901-2&quot;,&#xd;
+      &quot;ownerAddress&quot;: &quot;House 23, Block D, Gulistan-e-Johar, Karachi&quot;,&#xd;
+&#xd;
+      &quot;tenantName&quot;: &quot;Bilal Hussain&quot;,&#xd;
+      &quot;tenantFatherName&quot;: &quot;Rashid Hussain&quot;,&#xd;
+      &quot;tenantCnic&quot;: &quot;42101-9988776-3&quot;,&#xd;
+      &quot;tenantAddress&quot;: &quot;Flat 5, Sector 11-C, North Karachi&quot;,&#xd;
+&#xd;
+      &quot;vehicleRegistrationNumber&quot;: &quot;KHI-5678&quot;,&#xd;
+      &quot;vehicleMake&quot;: &quot;Honda&quot;,&#xd;
+      &quot;vehicleModel&quot;: &quot;Civic 2019&quot;,&#xd;
+      &quot;vehicleColor&quot;: &quot;Black&quot;,&#xd;
+      &quot;chassisNumber&quot;: &quot;CHS987654321&quot;,&#xd;
+      &quot;engineNumber&quot;: &quot;ENG123456789&quot;,&#xd;
+      &quot;vehicleHorsePower&quot;: &quot;1800cc&quot;,&#xd;
+&#xd;
+      &quot;weeklyRentAmount&quot;: &quot;25000&quot;,&#xd;
+      &quot;weeklyRentWords&quot;: &quot;Twenty Five Thousand Pakistani Rupees&quot;,&#xd;
+&#xd;
+      &quot;rentPaymentDay&quot;: &quot;Every Monday&quot;,&#xd;
+      &quot;agreementDuration&quot;: &quot;3 Months&quot;,&#xd;
+&#xd;
+      &quot;witness1Name&quot;: &quot;Usman Tariq&quot;,&#xd;
+      &quot;witness1Father&quot;: &quot;Tariq Mehmood&quot;,&#xd;
+      &quot;witness1Cnic&quot;: &quot;42101-3344556-4&quot;,&#xd;
+&#xd;
+      &quot;witness2Name&quot;: &quot;Saif Khan&quot;,&#xd;
+      &quot;witness2Father&quot;: &quot;Imran Khan&quot;,&#xd;
+      &quot;witness2Cnic&quot;: &quot;42101-7788990-5&quot;&#xd;
+    }&#xd;
+  }&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Document-Service" enabled="false">
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8082</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">http://localhost:8082/api/v1/generatepdf</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;!DOCTYPE html&gt;&#xd;
+&lt;html&gt;&#xd;
+&lt;head&gt;&#xd;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;&#xd;
+    &lt;title&gt;Agreement of Rent Vehicle&lt;/title&gt;&#xd;
+&#xd;
+    &lt;style&gt;&#xd;
+&#xd;
+        @page{&#xd;
+            margin-top:120px;&#xd;
+            margin-bottom:120px;&#xd;
+            margin-left:100px;&#xd;
+            margin-right:100px;&#xd;
+        }&#xd;
+&#xd;
+        body{&#xd;
+            font-family:&quot;Times New Roman&quot;, serif;&#xd;
+            font-size:16px;&#xd;
+            line-height:1.7;&#xd;
+        }&#xd;
+&#xd;
+        h1{&#xd;
+            text-align:center;&#xd;
+            text-decoration:underline;&#xd;
+        }&#xd;
+&#xd;
+        .section{&#xd;
+            margin-top:25px;&#xd;
+        }&#xd;
+&#xd;
+        .vehicle-table{&#xd;
+            margin-top:20px;&#xd;
+        }&#xd;
+&#xd;
+        .vehicle-table td{&#xd;
+            padding:4px 0;&#xd;
+        }&#xd;
+&#xd;
+        .signature-table{&#xd;
+            width:100%;&#xd;
+            margin-top:40px;&#xd;
+        }&#xd;
+&#xd;
+        .signature-table td{&#xd;
+            width:50%;&#xd;
+            vertical-align:top;&#xd;
+        }&#xd;
+&#xd;
+        .center{&#xd;
+            text-align:center;&#xd;
+        }&#xd;
+&#xd;
+    &lt;/style&gt;&#xd;
+&#xd;
+&lt;/head&gt;&#xd;
+&#xd;
+&lt;body&gt;&#xd;
+&#xd;
+&lt;h1&gt;AGREEMENT OF RENT VEHICLE&lt;/h1&gt;&#xd;
+&#xd;
+&lt;p&gt;&#xd;
+    This agreement of rent vehicle has been made at&#xd;
+    &lt;strong&gt;Karachi&lt;/strong&gt;&#xd;
+    on this &lt;strong&gt;10&lt;/strong&gt; day of&#xd;
+    &lt;strong&gt;March&lt;/strong&gt;.&#xd;
+&lt;/p&gt;&#xd;
+&#xd;
+&lt;div class=&quot;section&quot;&gt;&#xd;
+&#xd;
+    &lt;h3&gt;BETWEEN&lt;/h3&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        Mr. &lt;strong&gt;Ahmed Ali&lt;/strong&gt;&#xd;
+        S/o &lt;strong&gt;Ghulam Mustafa&lt;/strong&gt;,&#xd;
+        Muslim, Adult, holding CNIC No.&#xd;
+        &lt;strong&gt;42101-5678901-2&lt;/strong&gt;,&#xd;
+&#xd;
+        Resident of &lt;strong&gt;House 23, Block D, Gulistan-e-Johar, Karachi&lt;/strong&gt;,&#xd;
+&#xd;
+        hereinafter called the &lt;b&gt;OWNER / FIRST PARTY&lt;/b&gt;.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+&lt;/div&gt;&#xd;
+&#xd;
+&lt;div class=&quot;section&quot;&gt;&#xd;
+&#xd;
+    &lt;h3&gt;AND&lt;/h3&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        Mr. &lt;strong&gt;Bilal Hussain&lt;/strong&gt;&#xd;
+        S/o &lt;strong&gt;Rashid Hussain&lt;/strong&gt;,&#xd;
+        Muslim, Adult, holding CNIC No.&#xd;
+        &lt;strong&gt;42101-9988776-3&lt;/strong&gt;,&#xd;
+&#xd;
+        Resident of &lt;strong&gt;Flat 5, Sector 11-C, North Karachi&lt;/strong&gt;,&#xd;
+&#xd;
+        hereinafter referred to as the &lt;b&gt;TENANT / SECOND PARTY&lt;/b&gt;.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+&lt;/div&gt;&#xd;
+&#xd;
+&lt;div class=&quot;section&quot;&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        Whereas the OWNER / FIRST PARTY is the lawful owner&#xd;
+        of the following vehicle:&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+    &lt;table class=&quot;vehicle-table&quot;&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Registration No:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;KHI-5678&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Make:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;Honda&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Model:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;Civic 2019&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Color:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;Black&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Chassis No:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;CHS987654321&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Engine No:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;ENG123456789&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+        &lt;tr&gt;&#xd;
+            &lt;td&gt;Horse Power:&lt;/td&gt;&#xd;
+            &lt;td&gt;&lt;strong&gt;1800cc&lt;/strong&gt;&lt;/td&gt;&#xd;
+        &lt;/tr&gt;&#xd;
+&#xd;
+    &lt;/table&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        Hereinafter referred to as the &lt;b&gt;said vehicle&lt;/b&gt;.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+&lt;/div&gt;&#xd;
+&#xd;
+&lt;div class=&quot;section&quot;&gt;&#xd;
+&#xd;
+    &lt;h3 class=&quot;center&quot;&gt;TERMS &amp; CONDITIONS&lt;/h3&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        1. The First Party agrees to rent out the said vehicle to the&#xd;
+        Second Party on weekly rent of&#xd;
+        Rs. &lt;strong&gt;25000&lt;/strong&gt;&#xd;
+        (Rupees &lt;strong&gt;Twenty Five Thousand Pakistani Rupees&lt;/strong&gt; only),&#xd;
+        payable every &lt;strong&gt;Every Monday&lt;/strong&gt;.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        2. This agreement shall remain valid for a period of&#xd;
+        &lt;strong&gt;3 Months&lt;/strong&gt;&#xd;
+        and may be extended by mutual consent of both parties.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        3. The Owner shall bear the maintenance expenses of the vehicle.&#xd;
+        In case of accident or damages, the Tenant shall be responsible&#xd;
+        for all repair costs.&#xd;
+        If the vehicle is stolen, the Second Party shall be fully responsible.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        4. If either party wishes to terminate this agreement,&#xd;
+        one month prior notice shall be served to the other party.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        5. The Second Party shall return the vehicle in the same condition&#xd;
+        as received. Any minor damages shall be the responsibility&#xd;
+        of the Second Party.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        6. The Owner shall be responsible for all legal matters&#xd;
+        related to the vehicle before the date of this agreement,&#xd;
+        including police cases, excise matters, ACLC matters,&#xd;
+        or court cases.&#xd;
+        After the vehicle handover date, the Tenant shall be responsible&#xd;
+        for such matters.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+&lt;/div&gt;&#xd;
+&#xd;
+&lt;div class=&quot;section&quot;&gt;&#xd;
+&#xd;
+    &lt;p&gt;&#xd;
+        IN WITNESS WHEREOF both parties have signed this agreement&#xd;
+        on the day, month and year first above mentioned.&#xd;
+    &lt;/p&gt;&#xd;
+&#xd;
+&lt;/div&gt;&#xd;
+&#xd;
+&lt;br&gt;&#xd;
+&#xd;
+&lt;table class=&quot;signature-table&quot;&gt;&#xd;
+&#xd;
+    &lt;tr&gt;&#xd;
+&#xd;
+        &lt;td&gt;&#xd;
+&#xd;
+            &lt;b&gt;OWNER / FIRST PARTY&lt;/b&gt;&#xd;
+&#xd;
+            &lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+            Signature: ____________________&#xd;
+&#xd;
+            &lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+            Name: Ahmed Ali&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            S/o: Ghulam Mustafa&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            CNIC No: 42101-5678901-2&#xd;
+&#xd;
+        &lt;/td&gt;&#xd;
+&#xd;
+        &lt;td&gt;&#xd;
+&#xd;
+            &lt;b&gt;TENANT / SECOND PARTY&lt;/b&gt;&#xd;
+&#xd;
+            &lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+            Signature: ____________________&#xd;
+&#xd;
+            &lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+            Name: Bilal Hussain&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            S/o: Rashid Hussain&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            CNIC No: 42101-9988776-3&#xd;
+&#xd;
+        &lt;/td&gt;&#xd;
+&#xd;
+    &lt;/tr&gt;&#xd;
+&#xd;
+&lt;/table&gt;&#xd;
+&#xd;
+&lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+&lt;table class=&quot;signature-table&quot;&gt;&#xd;
+&#xd;
+    &lt;tr&gt;&#xd;
+&#xd;
+        &lt;td&gt;&#xd;
+&#xd;
+            &lt;b&gt;Witness 1&lt;/b&gt;&#xd;
+&#xd;
+            &lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+            Signature: ____________________&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            Name: Usman Tariq&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            S/o: Tariq Mehmood&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            CNIC No: 42101-3344556-4&#xd;
+&#xd;
+        &lt;/td&gt;&#xd;
+&#xd;
+        &lt;td&gt;&#xd;
+&#xd;
+            &lt;b&gt;Witness 2&lt;/b&gt;&#xd;
+&#xd;
+            &lt;br&gt;&lt;br&gt;&#xd;
+&#xd;
+            Signature: ____________________&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            Name: Saif Khan&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            S/o: Imran Khan&#xd;
+&#xd;
+            &lt;br&gt;&#xd;
+&#xd;
+            CNIC No: 42101-7788990-5&#xd;
+&#xd;
+        &lt;/td&gt;&#xd;
+&#xd;
+    &lt;/tr&gt;&#xd;
+&#xd;
+&lt;/table&gt;&#xd;
+&#xd;
+&lt;/body&gt;&#xd;
+&lt;/html&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Template-Service" enabled="false">
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">http://localhost:8080/api/v1/form</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&#xd;
+  {&#xd;
+    &quot;templateName&quot;: &quot;Agreement Of Rent Vehicle&quot;,&#xd;
+    &quot;category&quot;: &quot;agreements&quot;,&#xd;
+    &quot;fields&quot;: {&#xd;
+      &quot;agreementCity&quot;: &quot;Karachi&quot;,&#xd;
+      &quot;agreementDay&quot;: &quot;10&quot;,&#xd;
+      &quot;agreementMonth&quot;: &quot;March&quot;,&#xd;
+&#xd;
+      &quot;ownerName&quot;: &quot;Ahmed Ali&quot;,&#xd;
+      &quot;ownerFatherName&quot;: &quot;Ghulam Mustafa&quot;,&#xd;
+      &quot;ownerCnic&quot;: &quot;42101-5678901-2&quot;,&#xd;
+      &quot;ownerAddress&quot;: &quot;House 23, Block D, Gulistan-e-Johar, Karachi&quot;,&#xd;
+&#xd;
+      &quot;tenantName&quot;: &quot;Bilal Hussain&quot;,&#xd;
+      &quot;tenantFatherName&quot;: &quot;Rashid Hussain&quot;,&#xd;
+      &quot;tenantCnic&quot;: &quot;42101-9988776-3&quot;,&#xd;
+      &quot;tenantAddress&quot;: &quot;Flat 5, Sector 11-C, North Karachi&quot;,&#xd;
+&#xd;
+      &quot;vehicleRegistrationNumber&quot;: &quot;KHI-5678&quot;,&#xd;
+      &quot;vehicleMake&quot;: &quot;Honda&quot;,&#xd;
+      &quot;vehicleModel&quot;: &quot;Civic 2019&quot;,&#xd;
+      &quot;vehicleColor&quot;: &quot;Black&quot;,&#xd;
+      &quot;chassisNumber&quot;: &quot;CHS987654321&quot;,&#xd;
+      &quot;engineNumber&quot;: &quot;ENG123456789&quot;,&#xd;
+      &quot;vehicleHorsePower&quot;: &quot;1800cc&quot;,&#xd;
+&#xd;
+      &quot;weeklyRentAmount&quot;: &quot;25000&quot;,&#xd;
+      &quot;weeklyRentWords&quot;: &quot;Twenty Five Thousand Pakistani Rupees&quot;,&#xd;
+&#xd;
+      &quot;rentPaymentDay&quot;: &quot;Every Monday&quot;,&#xd;
+      &quot;agreementDuration&quot;: &quot;3 Months&quot;,&#xd;
+&#xd;
+      &quot;witness1Name&quot;: &quot;Usman Tariq&quot;,&#xd;
+      &quot;witness1Father&quot;: &quot;Tariq Mehmood&quot;,&#xd;
+      &quot;witness1Cnic&quot;: &quot;42101-3344556-4&quot;,&#xd;
+&#xd;
+      &quot;witness2Name&quot;: &quot;Saif Khan&quot;,&#xd;
+      &quot;witness2Father&quot;: &quot;Imran Khan&quot;,&#xd;
+      &quot;witness2Cnic&quot;: &quot;42101-7788990-5&quot;&#xd;
+    }&#xd;
+  }&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Draft-Service" enabled="false">
+          <stringProp name="HTTPSampler.port">8081</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">http://localhost:8081/api/v1/generateForm</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[&#xd;
+    {&#xd;
+        &quot;templateName&quot;: &quot;Agreement Of Rent Vehicle&quot;,&#xd;
+        &quot;category&quot;: &quot;agreements&quot;,&#xd;
+        &quot;fields&quot;: [&#xd;
+            &quot;agreementCity&quot;,&#xd;
+            &quot;agreementDay&quot;,&#xd;
+            &quot;agreementMonth&quot;,&#xd;
+            &quot;ownerName&quot;,&#xd;
+            &quot;ownerFatherName&quot;,&#xd;
+            &quot;ownerCnic&quot;,&#xd;
+            &quot;ownerAddress&quot;,&#xd;
+            &quot;tenantName&quot;,&#xd;
+            &quot;tenantFatherName&quot;,&#xd;
+            &quot;tenantCnic&quot;,&#xd;
+            &quot;tenantAddress&quot;,&#xd;
+            &quot;vehicleRegistrationNumber&quot;,&#xd;
+            &quot;vehicleMake&quot;,&#xd;
+            &quot;vehicleModel&quot;,&#xd;
+            &quot;vehicleColor&quot;,&#xd;
+            &quot;chassisNumber&quot;,&#xd;
+            &quot;engineNumber&quot;,&#xd;
+            &quot;vehicleHorsePower&quot;,&#xd;
+            &quot;weeklyRentAmount&quot;,&#xd;
+            &quot;weeklyRentWords&quot;,&#xd;
+            &quot;rentPaymentDay&quot;,&#xd;
+            &quot;agreementDuration&quot;,&#xd;
+            &quot;ownerName&quot;,&#xd;
+            &quot;ownerFatherName&quot;,&#xd;
+            &quot;ownerCnic&quot;,&#xd;
+            &quot;tenantName&quot;,&#xd;
+            &quot;tenantFatherName&quot;,&#xd;
+            &quot;tenantCnic&quot;,&#xd;
+            &quot;witness1Name&quot;,&#xd;
+            &quot;witness1Father&quot;,&#xd;
+            &quot;witness1Cnic&quot;,&#xd;
+            &quot;witness2Name&quot;,&#xd;
+            &quot;witness2Father&quot;,&#xd;
+            &quot;witness2Cnic&quot;&#xd;
+        ]&#xd;
+    }&#xd;
+]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

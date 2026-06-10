@@ -6,7 +6,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "Draft-Service", url = "http://draft-service:8081")
+@FeignClient(
+        name = "Draft-Service",
+        url = "${draft.service.url}"
+)
 public interface DraftServiceClient {
 
     @PostMapping("/api/v1/generateForm")

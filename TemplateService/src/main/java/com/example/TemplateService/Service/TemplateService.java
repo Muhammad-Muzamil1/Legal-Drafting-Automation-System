@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 
 @Service
 public class TemplateService {
@@ -52,6 +54,13 @@ public class TemplateService {
 
     }
 
+    @CircuitBreaker(
+            name = "draftService",
+            fallbackMethod = "submitFormFallback"
+    )
+    @Retry(
+            name = "draftService"
+    )
     public String submitForm(FormDataReq formDataDto){
 
         Resource[] resources = fileIOUitl.findFile(formDataDto.getCategory());
@@ -61,14 +70,27 @@ public class TemplateService {
 
             if (resource.getFilename().equals(formDataDto.getTemplateName()+".html")) {
                 htmlContent = fileIOUitl.readFileContent(resource);
-// if file found return
             }
         }
 
-        //send htmlcontent and formdatadto.fields to draft service
-        DraftClientReq draftClientReq = new DraftClientReq(htmlContent,formDataDto.getFields());
+        DraftClientReq draftClientReq =
+                new DraftClientReq(
+                        htmlContent,
+                        formDataDto.getFields()
+                );
 
         return draftServiceClient.Form(draftClientReq);
+    }
+    public String submitFormFallback(
+            FormDataReq formDataDto,
+            Exception ex
+    ) {
 
+        System.out.println("==============================");
+        System.out.println("Circuit Breaker Activated");
+        System.out.println("Reason : " + ex.getMessage());
+        System.out.println("==============================");
+
+        return "Draft Service is temporarily unavailable. Please try again later.";
     }
 }

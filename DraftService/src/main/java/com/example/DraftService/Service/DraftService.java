@@ -18,10 +18,7 @@ public class DraftService {
             FinalForm = FinalForm.replace(placeholder, entry.getValue());
 
         }
-
-//        FormDocReq formDocReq = new FormDocReq(FinalForm);
-//        return DocumentClientService.docForm(formDocReq);
-            return FinalForm;
+         return FinalForm;
     }
 
 }
