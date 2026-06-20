@@ -2,6 +2,7 @@ package com.example.TemplateService.Controller;
 
 import com.example.TemplateService.Dto.FormDataReq;
 import com.example.TemplateService.Dto.TemplateFieldsRes;
+import com.example.TemplateService.Dto.TemplatesRes;
 import com.example.TemplateService.Service.TemplateService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class TemplateController {
     }
 
     @GetMapping("/category/{category}/templates")
-    public ResponseEntity<List<String>> getAllTemplates(@PathVariable String category) throws IOException {
+    public ResponseEntity<TemplatesRes> getAllTemplates(@PathVariable String category) throws IOException {
         return ResponseEntity.ok().body(templateService.getAllTemplates(category));
     }
 

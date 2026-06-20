@@ -23,7 +23,7 @@ export const Templates = () => {
       try {
         setLoading(true);
         const data = await getTemplates(category);
-        setTemplates(data);
+        setTemplates(data.templates);
       } catch (err) {
         setError(err.message);
       } finally {

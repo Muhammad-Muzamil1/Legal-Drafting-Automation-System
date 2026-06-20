@@ -1,4 +1,4 @@
-package com.example.ApiGateway;
+package com.example.ApiGateway.Configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

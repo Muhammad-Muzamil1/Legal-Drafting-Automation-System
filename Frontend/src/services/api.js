@@ -30,10 +30,13 @@ export const getCategories = () => {
 export const getTemplates = async (category) => {
   const res = await api.get(`/category/${category}/templates`);
 
-  // remove .html extension
-  return res.data.map((t) => t.replace(".html", ""));
+  return {
+    ...res.data,
+    templates: res.data.templates.map((t) =>
+      t.replace(".html", "")
+    ),
+  };
 };
-
 export const getFormFields = async (category, template) => {
   const res = await api.get(
     `/category/${category}/template/${template}/fields`

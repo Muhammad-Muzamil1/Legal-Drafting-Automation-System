@@ -1,5 +1,7 @@
-package com.example.ApiGateway;
+package com.example.ApiGateway.Configs;
 
+import com.example.ApiGateway.Filters.RateLimitFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +22,9 @@ public class GatewayRoutesConfig {
     @Value("${services.document.url}")
     private String documentUrl;
 
+    @Autowired
+    private RateLimitFilter rateLimitFilter;
+
     @Bean
     @SuppressWarnings("deprecation")
     public RouterFunction<ServerResponse> templateServiceRoute() {
@@ -31,7 +36,7 @@ public class GatewayRoutesConfig {
                                 .or(path("/api/v1/form/**")),
 
                         http(templateUrl))
-
+                .filter(rateLimitFilter)
                 .filter(
                         circuitBreaker(config -> config
                                 .setId("templateService")
@@ -52,7 +57,7 @@ public class GatewayRoutesConfig {
                         path("/api/v1/generatepdf/**"),
 
                         http(documentUrl))
-
+                .filter(rateLimitFilter)
                 .filter(
                         circuitBreaker(config -> config
                                 .setId("documentService")
